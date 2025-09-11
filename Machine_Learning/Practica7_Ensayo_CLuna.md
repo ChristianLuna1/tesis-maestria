@@ -2,7 +2,7 @@
 
 **Autor:** Christian Luna — Maestría en Cómputo Aplicado  
 **Tema:** Comparación de *Differential Evolution (DE)*, *Gradient Descent (GD) aproximado* y *GD analítico* aplicados a **regresión logística** con pérdida **Negative Log-Likelihood (NLL)**.  
-**Dataset:** `dataset_binario_Practica_3.csv` (1 variable explicativa, etiqueta binaria); partición usada en el cuaderno: `train = 160`, `test = 40` (balanceado 100/100).  
+**Dataset:https://raw.githubusercontent.com/ChristianLuna1/tesis-maestria/refs/heads/main/Machine_Learning/breast_cancer_wisconsin_diagnostic.csv (1 variable explicativa, etiqueta binaria); partición usada en el cuaderno: `train = 160`, `test = 40` (balanceado 100/100).  
 **Semilla:** 42.  
 
 ---
@@ -110,23 +110,6 @@ Cuando el problema admite una formulación **suave** y el gradiente es **accesib
 
 Los métodos **aproximados** (GD numérico, DE) son valiosos cuando **no hay gradiente**, la función es **no diferenciable** o el paisaje es **muy irregular**. En esos casos, DE puede abrir camino y GD numérico permite optimizar sin derivaciones manuales. Pero **si hay gradiente**, la **ventaja práctica** del analítico en **tiempo/calidad** es clara, como se evidenció en mis resultados.
 
----
 
-## 7. Conclusiones personales
 
-- Con este dataset binario de una dimensión, **GD analítico** fue el **mejor** en NLL y también **eficiente** en coste computacional.  
-- **GD aproximado** rindió **muy cercano**, y es una **herramienta útil** cuando no queremos (o no podemos) derivar.  
-- **DE** es una **apuesta segura** para problemas “difíciles” (sin gradiente o con múltiples mínimos), pero en tareas suaves conviene **preferir** un método basado en gradiente.
 
-> En resumen: **usar enfoques analíticos cuando existan**; recurrir a **aproximados o evolutivos** cuando el gradiente sea inaccesible o el problema lo amerite.
-
----
-
-### Anexo: hiperparámetros y reproducibilidad
-- `DE(pop=30, gens=800, F=0.8, CR=0.9, bounds=(-3,3))`  
-- `GD_aprox(lr0=0.15, max_iter=600, delta=1e-6)`  
-- `GD_analitico(lr0=0.2, max_iter=2000)`  
-- *Split:* 80/20 con estratificación cuando es viable; z‑score con estadísticas de train.  
-- **Semilla:** 42.
-
-**Enlace del cuaderno (Colab/Jupyter):** *(pegar aquí tu URL)*
