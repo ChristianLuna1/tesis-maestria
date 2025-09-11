@@ -37,13 +37,12 @@ Trabajé con **tres optimizadores** sobre el mismo modelo y datos:
 
 ## 3. Resultados cuantitativos (test)
 
-Valores leídos de mi ejecución (ver figura incluida en el notebook):
+| Método         | NLL_test | LogLoss | Tiempo (s) |
+|----------------|---------:|--------:|-----------:|
+| DE             | 1.086043 | 0.332270| 29.073618  |
+| GD_aprox       | 0.020535 | 0.020535| 4.122071   |
+| GD_analítico   | 0.006510 | 0.006510| 0.462615   |
 
-| Método     | NLL_test | LogLoss | Tiempo (s) |
-|------------|---------:|--------:|-----------:|
-| **DE**         | 0.188080 | 0.188080 | 4.075462 |
-| **GD_aprox**   | 0.130361 | 0.130361 | 0.244381 |
-| **GD_analítico** | **0.079480** | **0.079480** | 0.315998 |
 
 Observaciones:
 - Los **tres** optimizadores aprenden un clasificador útil; sin embargo, **GD analítico** alcanza el **menor NLL** en test.
