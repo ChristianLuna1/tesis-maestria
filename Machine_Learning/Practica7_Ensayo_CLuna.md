@@ -43,6 +43,12 @@ Trabajé con **tres optimizadores** sobre el mismo modelo y datos:
 | GD_aprox       | 0.020535 | 0.020535| 4.122071   |
 | GD_analítico   | 0.006510 | 0.006510| 0.462615   |
 
+**Observaciones (lectura directa de la tabla):**
+- **GD analítico** obtuvo la **mejor NLL** en test (**0.00651**), con el **menor tiempo** de entrenamiento (~0.46 s).
+- **GD aproximado** quedó **cerca** (**0.02053**), pero su costo por iteración es mayor porque calcula el gradiente numéricamente (~4.12 s).
+- **DE** se quedó **muy por encima** en NLL (**1.0860**) y además requirió **mucho más tiempo** (~29.07 s) debido al enfoque poblacional.
+
+
 
 Observaciones:
 - Los **tres** optimizadores aprenden un clasificador útil; sin embargo, **GD analítico** alcanza el **menor NLL** en test.
@@ -65,7 +71,9 @@ Incluí dos gráficos en el cuaderno:
 - **GD aproximado** necesita **≈2 evaluaciones por parámetro** y por iteración (diferencia centrada), por eso aparece **a la derecha** del analítico en coste, aunque la NLL baje bien.
 - **DE** consume **muchas** evaluaciones (población × generaciones). Con el mismo presupuesto, su NLL final queda por encima.
 
-Conclusión de convergencia: **si hay gradiente cerrado y el problema es suave (como la logística), GD analítico domina** en calidad y eficiencia.
+**Conclusión de convergencia (según mis curvas):**
+- Por iteraciones: el **GD analítico** desciende rápido y sigue puliendo; el **GD aproximado** replica la forma y converge un poco más arriba; **DE** cae al inicio y se estabiliza pronto.
+- Por costo (evaluaciones de NLL): el **GD analítico** logra el **mejor NLL con mucho menos costo**; el **GD aproximado** necesita muchas más evaluaciones; **DE** consume todavía más y termina con NLL mayor.
 
 ---
 
