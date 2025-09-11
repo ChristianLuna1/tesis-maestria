@@ -39,7 +39,7 @@ Gradiente numérico (GD aproximado, diferencia centrada):
 | GD_aprox |  0.1304  |  0.1304 | 1.00 | 1.00 |    0.2404  |
 | GD_an    | *0.0795* | *0.0795*| 1.00 | 1.00 |    0.3101  |
 
-(Estos son los valores observados en nuestra corrida; si tus números difieren ligeramente por semilla/partición, reemplázalos.)
+(Estos son los valores observados en nuestra corrida;
 
 4) Convergencia observada
 -------------------------
@@ -67,7 +67,3 @@ GD analítico (gradiente cerrado)
 ---------------
 En regresión logística con NLL (suave y bien condicionada), GD analítico es preferible: menor NLL con menor costo y convergencia más nítida. GD aproximado es una alternativa válida cuando no se dispone del gradiente cerrado; su desempeño aquí es cercano, a costa de más evaluaciones. DE es útil cuando el paisaje es no diferenciable o multimodal; en logística estándar, suele quedar por detrás con el mismo presupuesto.
 
-7) Enlace a la implementación (Colab)
--------------------------------------
-Pega aquí tu enlace de Colab con el notebook de la práctica:
-    https://colab.research.google.com/drive/TU_ID_AQUI
