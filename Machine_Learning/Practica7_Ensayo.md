@@ -1,7 +1,7 @@
 Comparación de optimizadores: DE vs. GD aproximado vs. GD analítico
 ====================================================================
 Problema: clasificación binaria con regresión logística (función objetivo: negative log-likelihood, NLL).
-Dataset: dataset_binario_Practica_3.csv (GitHub): https://raw.githubusercontent.com/ChristianLuna1/tesis-maestria/refs/heads/main/Machine_Learning/dataset_binario_Practica_3.csv
+Dataset:
 Métricas: NLL en test (principal), Accuracy y AUC (complementarias).
 Implementación: tres optimizadores sobre el mismo modelo y datos:
   1) Differential Evolution (DE)
